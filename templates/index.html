@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Roalex.dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+<!-- Contenedor principal -->
+<div class="min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <header class="border-b border-slate-800 bg-slate-950/80 sticky top-0 z-20 backdrop-blur">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img
+                        src="{{ url_for('static', filename='logo.png') }}"
+                        alt="Roalex.dev"
+                        class="h-9 w-auto rounded-lg"
+                >
+                <div>
+                    <p class="font-semibold text-sm">Roalex.dev</p>
+                    <p class="text-xs text-slate-400">Clases particulares</p>
+                </div>
+            </div>
+            <nav class="hidden sm:flex gap-5 text-sm text-slate-300">
+                <a href="#servicios" class="hover:text-cyan-400">Servicios</a>
+                <a href="#precios" class="hover:text-cyan-400">Precios</a>
+                <!--          <a href="#testimonios" class="hover:text-cyan-400">Testimonios</a>-->
+                <a href="#contacto" class="hover:text-cyan-400">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="flex-1">
+        <section class="max-w-5xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-10 items-center">
+            <!-- Texto -->
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">
+                    Clases de particulares y de refuerzo
+                    <span class="text-cyan-400">personalizadas</span>
+                </h1>
+                <p class="text-slate-300 mb-4">
+                    Sesiones de nivelación y refuerzo en fundamentos de programación,
+                    desarrollo web, bases de datos y análisis de datos, adaptadas a tu ritmo.
+                </p>
+                <ul class="text-sm text-slate-300 space-y-1 mb-6 list-disc list-inside">
+                    <li>Virtual o presencial (según disponibilidad)</li>
+                    <li>Para colegio, universidad o profesionales</li>
+                    <li>Plan de estudio según tus objetivos</li>
+                </ul>
+
+                <div class="flex flex-wrap gap-3">
+                    <!-- Botón WhatsApp -->
+                    <a href="https://wa.me/593988591466?text=Hola%20Robin%2C%20quiero%20info%20sobre%20clases%20de%20particulares"
+                       target="_blank"
+                       class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-semibold text-sm hover:bg-cyan-400 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 24 24"
+                             fill="currentColor"
+                             class="w-5 h-5 mr-3">
+                            <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.62-6.001C.122 5.281 5.403 0 12.06 0c3.173 0 6.167 1.237 8.413 3.484A11.8 11.8 0 0124 11.98c-.003 6.62-5.383 12-12.04 12a11.93 11.93 0 01-6.003-1.616L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.593 5.448 0 9.886-4.434 9.889-9.885.003-5.462-4.415-9.89-9.881-9.894-5.452 0-9.887 4.434-9.889 9.884a9.822 9.822 0 001.588 5.306l-.999 3.648 3.9-1.652zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.073.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+                        </svg>
+                        Escribirme por WhatsApp
+                    </a>
+
+                    <!-- Botón hacia AshlyA (futuro) -->
+                    <!--            <a href="https://tu-dominio-ashlya.com"-->
+                    <!--               target="_blank"-->
+                    <!--               class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-slate-700 text-sm text-slate-200 hover:border-cyan-400 hover:text-cyan-300 transition">-->
+                    <!--              Ir a mi app AshlyA-->
+                    <!--            </a>-->
+                </div>
+
+                <p class="mt-3 text-xs text-slate-500">
+                    Más de 5 años de experiencia aplicando, desarrollando y compartiendo conocimientos en el ámbito
+                    tecnológico.
+                </p>
+            </div>
+
+            <!-- “Foto” / tarjeta lateral -->
+            <div class="flex justify-center">
+                <div class="rounded-2xl bg-slate-900 border border-slate-800 shadow-xl p-4 w-full max-w-sm">
+                    <div class="aspect-[4/3] rounded-xl overflow-hidden mb-4">
+                        <img
+                                src="{{ url_for('static', filename='robin.jpeg') }}"
+                                alt="Robin Alvarado"
+                                class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <h2 class="font-semibold text-lg mb-1">Robin Alvarado A.</h2>
+                    <p class="text-xs text-slate-400 mb-2">
+                        Ingeniero en sistemas · Desarrollador web · Analista de datos
+                    </p>
+                    <p class="text-xs text-slate-300">
+                        Te acompaño paso a paso para que entiendas la lógica de la
+                        programación, no solo para que memorices código.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SERVICIOS -->
+        <section id="servicios" class="bg-slate-900/40 border-y border-slate-800">
+            <div class="max-w-5xl mx-auto px-4 py-10">
+                <h2 class="text-xl font-semibold mb-4">¿Qué puedes aprender?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-slate-900 rounded-xl border border-slate-800 p-4">
+                        <h3 class="font-semibold mb-1">Fundamentos de programación</h3>
+                        <p class="text-slate-300 text-xs">
+                            Algoritmos, pseudocódigo, estructuras secuenciales, condicionales y repetitivas.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 rounded-xl border border-slate-800 p-4">
+                        <h3 class="font-semibold mb-1">Programación Orientada a Objetos</h3>
+                        <p class="text-slate-300 text-xs">
+                            Clases, objetos, herencia, encapsulamiento y buenas prácticas.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 rounded-xl border border-slate-800 p-4">
+                        <h3 class="font-semibold mb-1">Desarrollo Web</h3>
+                        <p class="text-slate-300 text-xs">
+                            HTML, CSS, JavaScript y conceptos para dar tus primeros pasos como dev web.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 rounded-xl border border-slate-800 p-4">
+                        <h3 class="font-semibold mb-1">Bases de Datos (SQL)</h3>
+                        <p class="text-slate-300 text-xs">
+                            Modelado básico, consultas SQL, joins y manejo de datos.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 rounded-xl border border-slate-800 p-4">
+                        <h3 class="font-semibold mb-1">Python para iniciantes</h3>
+                        <p class="text-slate-300 text-xs">
+                            Sintaxis básica, scripts útiles y primeros proyectos.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900 rounded-xl border border-slate-800 p-4">
+                        <h3 class="font-semibold mb-1">Análisis de datos (Power BI)</h3>
+                        <p class="text-slate-300 text-xs">
+                            Introducción a dashboards y visualización de datos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN TECNOLOGÍAS / LOGOS -->
+        <section class="bg-slate-950">
+            <div class="max-w-5xl mx-auto px-4 py-8">
+                <h2 class="text-sm font-semibold text-slate-400 mb-4 uppercase tracking-wide">
+                    Tecnologías con las que trabajo
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 items-center">
+                    <!-- HTML / CSS / JS -->
+                    <div class="flex items-center justify-center bg-slate-900 rounded-xl border border-slate-800 px-3 py-2">
+                        <img
+                                src="{{ url_for('static', filename='logos/fix-html-css-javascript-for-website-logo-6.png') }}"
+                                alt="HTML CSS JavaScript"
+                                class="h-10 w-auto object-contain"
+                        />
+                    </div>
+
+                    <!-- Java -->
+                    <div class="flex items-center justify-center bg-slate-900 rounded-xl border border-slate-800 px-3 py-2">
+                        <img
+                                src="{{ url_for('static', filename='logos/java-logo-png_seeklogo-158094.png') }}"
+                                alt="Java"
+                                class="h-10 w-auto object-contain"
+                        />
+                    </div>
+
+                    <!-- PSeInt -->
+                    <div class="flex items-center justify-center bg-slate-900 rounded-xl border border-slate-800 px-3 py-2">
+                        <img
+                                src="{{ url_for('static', filename='logos/logo-header.png') }}"
+                                alt="PSeInt"
+                                class="h-10 w-auto object-contain"
+                        />
+                    </div>
+
+                    <!-- SQL Server -->
+                    <div class="flex items-center justify-center bg-slate-900 rounded-xl border border-slate-800 px-3 py-2">
+                        <img
+                                src="{{ url_for('static', filename='logos/Microsoft_Sql_Server_Vector_Logo.png') }}"
+                                alt="SQL Server"
+                                class="h-10 w-auto object-contain"
+                        />
+                    </div>
+
+                    <!-- Power BI -->
+                    <div class="flex items-center justify-center bg-slate-900 rounded-xl border border-slate-800 px-3 py-2">
+                        <img
+                                src="{{ url_for('static', filename='logos/Power-Bi-Logo-PNG-Pic.png') }}"
+                                alt="Power BI"
+                                class="h-10 w-auto object-contain"
+                        />
+                    </div>
+
+                    <!-- Python -->
+                    <div class="flex items-center justify-center bg-slate-900 rounded-xl border border-slate-800 px-3 py-2">
+                        <img
+                                src="{{ url_for('static', filename='logos/Python_logo_and_wordmark.svg.png') }}"
+                                alt="Python"
+                                class="h-10 w-auto object-contain"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PRECIOS -->
+        <section id="precios" class="max-w-5xl mx-auto px-4 py-10">
+            <div class="max-w-5xl mx-auto bg-slate-900/40 border border-slate-800 rounded-2xl px-6 py-8">
+                <h2 class="text-xl font-semibold mb-2">Precios y paquetes</h2>
+                <p class="text-xs text-slate-400 mb-4">
+                    Los precios pueden ajustarse según la modalidad (virtual/presencial) y el número de estudiantes.
+                </p>
+
+                <!-- TABLA POR HORA / POR PERSONA -->
+                <div class="mb-10">
+                    <h3 class="font-semibold mb-2 text-sm">📌 Tabla de precios (por hora / por persona)</h3>
+                    <!--          <p class="text-[11px] text-slate-400 mb-2">-->
+                    <!--            Basado en mi experiencia real de 5 años como ingeniero en sistemas y desarrollador web.-->
+                    <!--          </p>-->
+                    <div class="overflow-x-auto text-xs">
+                        <div class="border border-slate-800 rounded-xl overflow-hidden">
+                            <table class="w-full">
+                                <thead class="bg-slate-900">
+                                <tr>
+                                    <th class="px-3 py-2 text-left">Tipo de clase</th>
+                                    <th class="px-3 py-2 text-center">N° de estudiantes</th>
+                                    <th class="px-3 py-2 text-center">Precio por persona (por hora)</th>
+                                    <!--                  <th class="px-3 py-2 text-left">Ganancia total por hora</th>-->
+                                </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800">
+                                <tr>
+                                    <td class="px-3 py-2">Clase individual</td>
+                                    <td class="px-3 py-2 text-center">1</td>
+                                    <td class="px-3 py-2 text-center">$10</td>
+                                    <!--                  <td class="px-3 py-2">$8 – $10</td>-->
+                                </tr>
+                                <tr class="bg-slate-900/30">
+                                    <td class="px-3 py-2">Grupo pequeño</td>
+                                    <td class="px-3 py-2 text-center">2 – 5 personas</td>
+                                    <td class="px-3 py-2 text-center">$8</td>
+                                    <!--                  <td class="px-3 py-2">$12 – $40</td>-->
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2">Grupo mediano</td>
+                                    <td class="px-3 py-2 text-center">6 – 10 personas</td>
+                                    <td class="px-3 py-2 text-center">$5</td>
+                                    <!--                  <td class="px-3 py-2">$24 – $50</td>-->
+                                </tr>
+                                <tr class="bg-slate-900/30">
+                                    <td class="px-3 py-2">Grupo grande</td>
+                                    <td class="px-3 py-2 text-center">10+ personas</td>
+                                    <td class="px-3 py-2 text-center">$4</td>
+                                    <!--                  <td class="px-3 py-2">$35 – $50+</td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAQUETES INDIVIDUALES -->
+                <div class="mb-8">
+                    <h3 class="font-semibold mb-2 text-sm">1) Paquetes individuales (1 persona)</h3>
+                    <div class="overflow-x-auto text-xs">
+                        <div class="border-slate-800 rounded-xl overflow-hidden">
+                            <table class="w-full border">
+                                <thead class="bg-slate-900">
+                                <tr>
+                                    <th class="px-3 py-2 text-left">Paquete</th>
+                                    <th class="px-3 py-2 text-center">Horas</th>
+                                    <th class="px-3 py-2 text-center">Precio total</th>
+                                    <th class="px-3 py-2 text-center">Ahorro aprox.</th>
+                                </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800">
+                                <tr>
+                                    <td class="px-3 py-2">Starter</td>
+                                    <td class="px-3 py-2 text-center">4 h</td>
+                                    <td class="px-3 py-2 text-center">$36</td>
+                                    <td class="px-3 py-2 text-center">-$4</td>
+                                </tr>
+                                <tr class="bg-slate-900/30">
+                                    <td class="px-3 py-2">Standard</td>
+                                    <td class="px-3 py-2 text-center">8 h</td>
+                                    <td class="px-3 py-2 text-center">$70</td>
+                                    <td class="px-3 py-2 text-center">-$10</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2">Intensivo</td>
+                                    <td class="px-3 py-2 text-center">12 h</td>
+                                    <td class="px-3 py-2 text-center">$99</td>
+                                    <td class="px-3 py-2 text-center">-$21</td>
+                                </tr>
+                                <tr class="bg-slate-900/30">
+                                    <td class="px-3 py-2">Pro (mensual)</td>
+                                    <td class="px-3 py-2 text-center">16 h</td>
+                                    <td class="px-3 py-2 text-center">$129</td>
+                                    <td class="px-3 py-2 text-center">-$31</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GRUPOS PEQUEÑOS -->
+                <div class="mb-8">
+                    <h3 class="font-semibold mb-2 text-sm">2) Paquetes grupales (2–5 personas)</h3>
+                    <div class="overflow-x-auto text-xs">
+                        <div class="border border-slate-800 rounded-xl overflow-hidden">
+                            <table class="w-full">
+                                <thead class="bg-slate-900">
+                                <tr>
+                                    <th class="px-3 py-2 text-left">Paquete</th>
+                                    <th class="px-3 py-2 text-center">Horas</th>
+                                    <th class="px-3 py-2 text-center">Precio por persona</th>
+                                    <!--                  <th class="px-3 py-2 text-left">Ganancia total aprox.</th>-->
+                                </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800">
+                                <tr>
+                                    <td class="px-3 py-2">Starter grupal</td>
+                                    <td class="px-3 py-2 text-center">4 h</td>
+                                    <td class="px-3 py-2 text-center">$22</td>
+                                    <!--                  <td class="px-3 py-2">$44 – $110</td>-->
+                                </tr>
+                                <tr class="bg-slate-900/30">
+                                    <td class="px-3 py-2">Standard grupal</td>
+                                    <td class="px-3 py-2 text-center">8 h</td>
+                                    <td class="px-3 py-2 text-center">$40</td>
+                                    <!--                  <td class="px-3 py-2">$80 – $200</td>-->
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2">Intensivo grupal</td>
+                                    <td class="px-3 py-2 text-center">12 h</td>
+                                    <td class="px-3 py-2 text-center">$55</td>
+                                    <!--                  <td class="px-3 py-2">$110 – $275</td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--          <p class="mt-2 text-[11px] text-slate-400">-->
+                    <!--            Los grupos pequeños te dan el mejor balance entre ganancia y manejo manejable.-->
+                    <!--          </p>-->
+                </div>
+
+                <!-- GRUPOS MEDIANOS -->
+                <div class="mb-8">
+                    <h3 class="font-semibold mb-2 text-sm">3) Paquetes para grupos medianos (6–10 personas)</h3>
+                    <div class="overflow-x-auto text-xs">
+                        <div class="border border-slate-800 rounded-xl overflow-hidden">
+                            <table class="w-full">
+                                <thead class="bg-slate-900">
+                                <tr>
+                                    <th class="px-3 py-2 text-left">Paquete</th>
+                                    <th class="px-3 py-2 text-center">Horas</th>
+                                    <th class="px-3 py-2 text-center">Precio por persona</th>
+                                    <!--                  <th class="px-3 py-2 text-left">Ganancia total aprox.</th>-->
+                                </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800">
+                                <tr>
+                                    <td class="px-3 py-2">Mini Bootcamp</td>
+                                    <td class="px-3 py-2 text-center">6 h</td>
+                                    <td class="px-3 py-2 text-center">$25</td>
+                                    <!--                  <td class="px-3 py-2">$150 – $250</td>-->
+                                </tr>
+                                <tr class="bg-slate-900/30">
+                                    <td class="px-3 py-2">Bootcamp Standard</td>
+                                    <td class="px-3 py-2 text-center">8 h</td>
+                                    <td class="px-3 py-2 text-center">$32</td>
+                                    <!--                  <td class="px-3 py-2">$192 – $320</td>-->
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2">Bootcamp Full</td>
+                                    <td class="px-3 py-2 text-center">12 h</td>
+                                    <td class="px-3 py-2 text-center">$45</td>
+                                    <!--                  <td class="px-3 py-2">$270 – $450</td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GRUPOS GRANDES -->
+                <div>
+                    <h3 class="font-semibold mb-2 text-sm">4) Paquetes para grupos grandes (10+ personas)</h3>
+                    <div class="overflow-x-auto text-xs">
+                        <div class="border border-slate-800 rounded-xl overflow-hidden">
+                            <table class="w-full">
+                                <thead class="bg-slate-900">
+                                <tr>
+                                    <th class="px-3 py-2 text-left">Paquete</th>
+                                    <th class="px-3 py-2 text-center">Horas</th>
+                                    <th class="px-3 py-2 text-center">Precio por persona</th>
+                                    <!--                  <th class="px-3 py-2 text-left">Ganancia total aprox.</th>-->
+                                </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-800">
+                                <tr>
+                                    <td class="px-3 py-2">Masterclass</td>
+                                    <td class="px-3 py-2 text-center">2 h</td>
+                                    <td class="px-3 py-2 text-center">$8</td>
+                                    <!--                  <td class="px-3 py-2">$80 – $120+</td>-->
+                                </tr>
+                                <tr class="bg-slate-900/30">
+                                    <td class="px-3 py-2">Curso grupal</td>
+                                    <td class="px-3 py-2 text-center">8 h</td>
+                                    <td class="px-3 py-2 text-center">$26</td>
+                                    <!--                  <td class="px-3 py-2">$260 – $400+</td>-->
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2">Curso Full</td>
+                                    <td class="px-3 py-2 text-center">12 h</td>
+                                    <td class="px-3 py-2 text-center">$35</td>
+                                    <!--                  <td class="px-3 py-2">$350 – $500</td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN TESTIMONIOS -->
+        <!--      <section id="testimonios" class="bg-slate-900/40 border-y border-slate-800">-->
+        <!--        <div class="max-w-5xl mx-auto px-4 py-10">-->
+        <!--          <h2 class="text-xl font-semibold mb-4">Testimonios</h2>-->
+        <!--          <div class="grid md:grid-cols-2 gap-4 text-sm">-->
+        <!--            <div class="bg-slate-900 rounded-xl border border-slate-800 p-4">-->
+        <!--              <p class="text-slate-200 text-xs mb-2">-->
+        <!--                “Gracias a las clases con Jefferson aprobé Programación I. Me gustó-->
+        <!--                que siempre explica con ejemplos y ejercicios prácticos.”-->
+        <!--              </p>-->
+        <!--              <p class="text-slate-400 text-xs">— Estudiante universitario</p>-->
+        <!--            </div>-->
+        <!--            <div class="bg-slate-900 rounded-xl border border-slate-800 p-4">-->
+        <!--              <p class="text-slate-200 text-xs mb-2">-->
+        <!--                “Tomé clases personalizadas para reforzar lógica y ahora me siento-->
+        <!--                más seguro para postular a mi primer trabajo como desarrollador.”-->
+        <!--              </p>-->
+        <!--              <p class="text-slate-400 text-xs">— Profesional en transición</p>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--      </section>-->
+
+        <!-- SECCIÓN CONTACTO -->
+        <section id="contacto" class="max-w-5xl mx-auto px-4 py-10">
+            <h2 class="text-xl font-semibold mb-3">Contacto</h2>
+            <p class="text-sm text-slate-300 mb-4">
+                Cuéntame qué necesitas y diseñamos un plan de estudio a tu medida.
+            </p>
+            <div class="flex flex-wrap gap-3 text-sm">
+                <a href="https://wa.me/593988591466?text=Hola%20Robin%2C%20quiero%20info%20sobre%20clases%20de%20particulares"
+                   target="_blank"
+                   class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-semibold hover:bg-cyan-400 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24"
+                         fill="currentColor"
+                         class="w-5 h-5 mr-3">
+                        <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.62-6.001C.122 5.281 5.403 0 12.06 0c3.173 0 6.167 1.237 8.413 3.484A11.8 11.8 0 0124 11.98c-.003 6.62-5.383 12-12.04 12a11.93 11.93 0 01-6.003-1.616L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.593 5.448 0 9.886-4.434 9.889-9.885.003-5.462-4.415-9.89-9.881-9.894-5.452 0-9.887 4.434-9.889 9.884a9.822 9.822 0 001.588 5.306l-.999 3.648 3.9-1.652zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.073.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+                    </svg>
+                    Escribirme por WhatsApp
+                </a>
+                <a href="mailto:roalexal@outlook.com"
+                   class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-slate-700 text-slate-200 hover:border-cyan-400 hover:text-cyan-300 transition">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24"
+                         fill="currentColor"
+                         class="w-5 h-5 mr-3">
+                        <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm0 4.236V18h16v-7.764l-7.378 5.74a1.5 1.5 0 0 1-1.244.266 1.5 1.5 0 0 1-.63-.266L4 10.236z"/>
+                    </svg>
+
+                    Enviarme un correo
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 py-4">
+        <div class="max-w-5xl mx-auto px-4 text-xs text-slate-500 flex flex-col sm:flex-row gap-2 justify-between">
+            <span>© <span id="year"></span> Robin Alvarado · Roalex.dev</span>
+            <span>Hecho con Python (Flask)</span>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Año automático en el footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
