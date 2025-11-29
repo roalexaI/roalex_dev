@@ -21,9 +21,9 @@ def contacto():
 
     # --- CONFIGURACIÓN DE CORREO ---
     # Usa variables de entorno para no hardcodear la clave
-    EMAIL_USER = os.getenv("roalexal@outlook.com")  # tu correo de envío (ej: roalexal@outlook.com)
-    EMAIL_PASS = os.getenv("112358As.outlook")  # contraseña o app password
-    EMAIL_TO = os.getenv("roalexal@outlook.com", EMAIL_USER)  # a dónde se enviará (puede ser el mismo)
+    EMAIL_USER = os.getenv("EMAIL_USER")  # nombre de la variable de entorno
+    EMAIL_PASS = os.getenv("EMAIL_PASS")  # nombre de la variable de entorno
+    EMAIL_TO = os.getenv("EMAIL_TO", EMAIL_USER) # a dónde se enviará (puede ser el mismo)
 
     if EMAIL_USER and EMAIL_PASS:
         msg = EmailMessage()
